@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container mt-5 pt-5">
+      <h3> BIENVENUE <%= @first_name%> </h3>
+      <p> Alors, il te plait mon petit site de potins ? </p>
+      <%= link_to 
+        <%= @gossips.each do |gossip| %>
+          <p>
+            <%= gossip.title %>
+            <%= gossip.user.first_name %><br/>
+          </p>
+        <% end %>
+        ,gossip_path %>
+    </div>
+  </body>
+</html>
